@@ -32,7 +32,7 @@ const config: ConfigurationFactory = () => {
     },
     plugins: [
       new CopyWebpackPlugin([
-        { from: 'icons', to: 'icons', ignore: ['icon.xcf'] },
+        { from: 'icons', to: 'icons' },
         { from: 'popup/index.html', to: 'popup/index.html' },
         { from: 'popup/style.css', to: 'popup/style.css' },
         { from: 'options/index.html', to: 'options/index.html' },
