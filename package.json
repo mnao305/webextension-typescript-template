@@ -7,7 +7,8 @@
     "build": "webpack --mode development",
     "watch": "webpack --watch --mode development",
     "commit": "git-cz",
-    "lint": "eslint --ext .ts,.js --ignore-path .gitignore ."
+    "lint": "eslint --ext .ts,.js --ignore-path .gitignore .",
+    "zip": "ts-node scripts/zip.ts"
   },
   "repository": {
     "type": "git",
@@ -26,9 +27,11 @@
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
+    "@types/archiver": "^3.1.0",
     "@types/copy-webpack-plugin": "^5.0.0",
     "@types/webpack": "^4.41.8",
     "@typescript-eslint/eslint-plugin": "^2.24.0",
+    "archiver": "^3.1.1",
     "copy-webpack-plugin": "^5.1.1",
     "cz-conventional-changelog": "^3.1.0",
     "cz-customizable": "^6.2.0",
