@@ -4,8 +4,9 @@
   "description": "webextension typescript template",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode development",
-    "watch": "webpack --watch --mode development",
+    "build": "webpack --mode=production",
+    "build:dev": "webpack --mode=development",
+    "watch": "webpack --watch --mode=development",
     "commit": "git-cz",
     "lint": "eslint --ext .ts,.js --ignore-path .gitignore .",
     "zip": "ts-node scripts/zip.ts"

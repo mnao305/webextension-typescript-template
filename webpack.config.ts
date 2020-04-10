@@ -3,10 +3,9 @@ import path from 'path'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 import { version } from './package.json'
 
-const config: ConfigurationFactory = () => {
+const config: ConfigurationFactory = (_, argv) => {
   return {
-    mode: process.env.NODE_ENV as 'development' | 'production' | 'none' | undefined,
-    devtool: 'inline-source-map',
+    devtool: argv.mode === 'production' ? false : 'inline-source-map',
     context: path.join(__dirname, 'src'),
     entry: {
       popup: './popup/index.ts',
