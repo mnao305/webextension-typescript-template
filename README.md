@@ -1,14 +1,14 @@
 # webextension-typescript-template
 自分用オレオレTypeScript製ブラウザ拡張機能用のテンプレート
 
-## 使う上でまず変更する点
+## 使い方等々
+このリポジトリは`Template repository`にしてあるので、↑にある`Use this template`ボタンを押せばこの構成でプロジェクトを始められる。
+
+### 使う上でまず変更する点
 - [ ] プロジェクト名（package.json, package-lock.json, manifest.json）
 - [ ] プロジェクト説明文（package.json, manifest.json）
 - [ ] package.json内の各リンク
 - [ ] LICENSE
-- [ ] git initからやり直した方がよさそう
-
-## 使い方等々
 
 ### 置いてあるnpm script
 - test
