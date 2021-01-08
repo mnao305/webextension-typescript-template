@@ -27,7 +27,7 @@ const config: ConfigurationFactory = (_, argv) => {
       ]
     },
     resolve: {
-      extensions: ['ts', 'js']
+      extensions: ['.ts', '.js']
     },
     plugins: [
       new CopyWebpackPlugin([
