@@ -1,6 +1,3 @@
 {
-  "extends": "standard-with-typescript",
-  "parserOptions": {
-      "project": "./tsconfig.json"
-  }
+  "extends": "@mnao305/eslint-config/presets/typescript"
 }

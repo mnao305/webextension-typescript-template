@@ -1,5 +1,5 @@
-import { ConfigurationFactory } from 'webpack'
 import path from 'path'
+import { ConfigurationFactory } from 'webpack'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 import { version } from './package.json'
 
@@ -11,23 +11,23 @@ const config: ConfigurationFactory = (_, argv) => {
       popup: './popup/index.ts',
       options: './options/index.ts',
       background: './background/index.ts',
-      content: './content/index.ts'
+      content: './content/index.ts',
     },
     output: {
       path: path.join(__dirname, 'dist'),
-      filename: '[name]/index.js'
+      filename: '[name]/index.js',
     },
     module: {
       rules: [
         {
           test: /.ts$/,
           use: 'ts-loader',
-          exclude: '/node_modules/'
-        }
-      ]
+          exclude: '/node_modules/',
+        },
+      ],
     },
     resolve: {
-      extensions: ['.ts', '.js']
+      extensions: ['.ts', '.js'],
     },
     plugins: [
       new CopyWebpackPlugin([
@@ -44,11 +44,11 @@ const config: ConfigurationFactory = (_, argv) => {
             jsonContent.version = version
 
             return JSON.stringify(jsonContent, null, 2)
-          }
-        }
+          },
+        },
         // { from: '_locales', to: '_locales' } //多言語化対応用
-      ])
-    ]
+      ]),
+    ],
   }
 }
 
