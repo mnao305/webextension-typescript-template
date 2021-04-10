@@ -1,7 +1,7 @@
 import path from 'path'
 import { ConfigurationFactory } from 'webpack'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
-import { version } from './package.json'
+import { version, name, description } from './package.json'
 
 const config: ConfigurationFactory = (_, argv) => {
   return {
@@ -42,6 +42,8 @@ const config: ConfigurationFactory = (_, argv) => {
           transform: (content) => {
             const jsonContent = JSON.parse(content.toString())
             jsonContent.version = version
+            jsonContent.name = name
+            jsonContent.description = description
 
             return JSON.stringify(jsonContent, null, 2)
           },
