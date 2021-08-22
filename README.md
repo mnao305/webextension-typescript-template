@@ -1,31 +1,15 @@
 # webextension-typescript-template
 
-自分用オレオレTypeScript製ブラウザ拡張機能用のテンプレート
+Browser Extensions Template using TypeScript and webpack.
 
-## 使い方等々
+## Usage
 
-このリポジトリは`Template repository`にしてあるので、↑にある`Use this template`ボタンを押せばこの構成でプロジェクトを始められる。
+Press the `Use this template` button to use this template.
 
-### 使う上でまず変更する点
+### Should be changed at the start of the template
 
-- [ ] プロジェクト名（package.json, package-lock.json）
-- [ ] プロジェクト説明文（package.json）
-- [ ] package.json内の各リンク
+- [ ] project name (package.json, package-lock.json)
+- [ ] project description (package.json)
+- [ ] Each link in package.json
 - [ ] LICENSE
-
-### 置いてあるnpm script
-
-- test
-  - 現状何もなし。必要ならjest等導入して変える
-- build
-  - そのままproductionモードでビルド
-- build:dev
-  - そのままdevelopモードでビルド
-- watch
-  - ファイル変更したらdevelopモードでビルド
-- commit
-  - 対話的にcommitlintに沿ったコミットをする
-- lint
-  - eslint。内容的にはstandard styleそのまま
-- zip
-  - ビルドしたファイルをzip化する。↑のbuildコマンドを実行後にする
+- [ ] READNE.md
