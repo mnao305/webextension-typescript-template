@@ -1,36 +1,36 @@
 import path from 'path'
-import { ConfigurationFactory } from 'webpack'
+import { Configuration } from 'webpack'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 import { version, name, description } from './package.json'
 
-const config: ConfigurationFactory = (_, argv) => {
-  return {
-    devtool: argv.mode === 'production' ? false : 'inline-source-map',
-    context: path.join(__dirname, 'src'),
-    entry: {
-      popup: './popup/index.ts',
-      options: './options/index.ts',
-      background: './background/index.ts',
-      content: './content/index.ts',
-    },
-    output: {
-      path: path.join(__dirname, 'dist'),
-      filename: '[name]/index.js',
-    },
-    module: {
-      rules: [
-        {
-          test: /.ts$/,
-          use: 'ts-loader',
-          exclude: '/node_modules/',
-        },
-      ],
-    },
-    resolve: {
-      extensions: ['.ts', '.js'],
-    },
-    plugins: [
-      new CopyWebpackPlugin([
+const config: Configuration = {
+  context: path.join(__dirname, 'src'),
+  entry: {
+    popup: './popup/index.ts',
+    options: './options/index.ts',
+    background: './background/index.ts',
+    content: './content/index.ts',
+  },
+  output: {
+    path: path.join(__dirname, 'dist'),
+    filename: '[name]/index.js',
+  },
+  module: {
+    rules: [
+      {
+        test: /.ts$/,
+        use: 'ts-loader',
+        exclude: '/node_modules/',
+      },
+    ],
+  },
+  resolve: {
+    extensions: ['.ts', '.js'],
+  },
+  plugins: [
+    new CopyWebpackPlugin({
+      patterns:
+      [
         { from: 'icons', to: 'icons' },
         { from: 'popup/index.html', to: 'popup/index.html' },
         { from: 'popup/style.css', to: 'popup/style.css' },
@@ -48,10 +48,10 @@ const config: ConfigurationFactory = (_, argv) => {
             return JSON.stringify(jsonContent, null, 2)
           },
         },
-        // { from: '_locales', to: '_locales' } //多言語化対応用
-      ]),
-    ],
-  }
+      // { from: '_locales', to: '_locales' } // i18n file
+      ],
+    }),
+  ],
 }
 
 export default config
