@@ -28,7 +28,6 @@
   "devDependencies": {
     "@commitlint/cli": "^12.1.1",
     "@commitlint/config-conventional": "^12.1.1",
-    "@mnao305/eslint-config": "^3.0.0",
     "@types/archiver": "^5.1.0",
     "@types/copy-webpack-plugin": "^8.0.1",
     "@types/webpack": "^5.28.0",
