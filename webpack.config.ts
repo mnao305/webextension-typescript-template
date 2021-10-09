@@ -9,23 +9,23 @@ const config: Configuration = {
     popup: './popup/index.ts',
     options: './options/index.ts',
     background: './background/index.ts',
-    content: './content/index.ts',
+    content: './content/index.ts'
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: '[name]/index.js',
+    filename: '[name]/index.js'
   },
   module: {
     rules: [
       {
         test: /.ts$/,
         use: 'ts-loader',
-        exclude: '/node_modules/',
-      },
-    ],
+        exclude: '/node_modules/'
+      }
+    ]
   },
   resolve: {
-    extensions: ['.ts', '.js'],
+    extensions: ['.ts', '.js']
   },
   plugins: [
     new CopyWebpackPlugin({
@@ -46,12 +46,12 @@ const config: Configuration = {
             jsonContent.description = description
 
             return JSON.stringify(jsonContent, null, 2)
-          },
-        },
+          }
+        }
       // { from: '_locales', to: '_locales' } // i18n file
-      ],
-    }),
-  ],
+      ]
+    })
+  ]
 }
 
 export default config
