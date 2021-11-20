@@ -13,7 +13,7 @@ const config: Configuration = {
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: '[name]/index.js'
+    filename: '[name].js'
   },
   module: {
     rules: [

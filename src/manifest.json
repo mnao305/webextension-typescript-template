@@ -2,29 +2,30 @@
   "name": "",
   "description": "",
   "version": null,
-  "manifest_version": 2,
+  "manifest_version": 3,
   "icons": {
     "48": "icons/icon_48.png",
     "128": "icons/icon_128.png"
   },
-  "browser_action": {
+  "action": {
     "default_popup": "popup/index.html"
   },
   "options_ui": {
-    "page": "options/index.html",
-    "chrome_style": true
+    "page": "options/index.html"
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
-      "js": ["content/index.js"]
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ]
     }
   ],
-  "background":{
-    "scripts":[
-      "background/index.js"
-    ],
-    "persistent": false
+  "background": {
+    "service_worker": "background.js"
   },
-  "permissions": []
+  "permissions": [],
+  "host_permissions": []
 }
