@@ -1,6 +1,6 @@
 # webextension-typescript-template
 
-A browser extension template using Manifest v3, TypeScript and webpack v5.
+Browser extension template using Manifest v3, TypeScript, and webpack v5.
 
 ## Usage
 
